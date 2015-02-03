@@ -1,0 +1,22 @@
+def first_test
+  if $did_ask_yet
+    puts "CMON!"
+  else
+   puts "What is 1 + 2?"
+   $did_ask_yet = true
+  end
+
+  gets.chomp
+end
+
+def second_test
+    puts "Next question: what is 5-3?"
+    gets.chomp
+end
+
+until test2.to_i == 2
+  puts "Try again!"
+  second_test
+end
+
+puts "Awesome job! You get a lolly."

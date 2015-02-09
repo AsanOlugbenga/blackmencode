@@ -1,0 +1,33 @@
+<%= form_for(@daily_bread) do |f| %>
+  <% if @daily_bread.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@daily_bread.errors.count, "error") %> prohibited this daily_bread from being saved:</h2>
+
+      <ul>
+      <% @daily_bread.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :modus_operandi %><br>
+    <%= f.text_area :modus_operandi %>
+  </div>
+  <div class="field">
+    <%= f.label :urgency %><br>
+    <%= f.date_select :urgency %>
+  </div>
+  <div class="field">
+    <%= f.label :gucci %><br>
+    <%= f.check_box :gucci %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
